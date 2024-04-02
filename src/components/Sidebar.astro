@@ -2,6 +2,7 @@
 import GaleLogo from "../assets/img/gale-logo.svg?raw";
 
 const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <aside>
@@ -9,10 +10,10 @@ const pathname = new URL(Astro.request.url).pathname;
     <Fragment set:html={GaleLogo} />
   </div>
   <div class="menu-list">
-    <a class={pathname === "/" ? "active" : ""} href="/">home</a>
-    <a class={pathname === "/about" ? "active" : ""} href="/about">about</a>
-    <a class={pathname === "/blog" ? "active" : ""} href="/blog">blog</a>
-    <a class={pathname === "/links" ? "active" : ""} href="/links">links</a>
+    <a class={currentPath === "" ? "active" : ""} href="/">home</a>
+    <a class={currentPath === "about" ? "active" : ""} href="/about">about</a>
+    <a class={currentPath === "blog" ? "active" : ""} href="/blog">blog</a>
+    <a class={currentPath === "links" ? "active" : ""} href="/links">links</a>
   </div>
 </aside>
 
