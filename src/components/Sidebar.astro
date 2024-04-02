@@ -1,0 +1,51 @@
+---
+import GaleLogo from "../assets/img/gale-logo.svg?raw";
+---
+
+<aside>
+  <div class="gale-logo">
+    <Fragment set:html={GaleLogo} />
+  </div>
+  <div class="menu-list">
+    <a href="/">home</a>
+    <a href="/about/">about</a>
+    <a href="#">blog</a>
+    <a href="#">links</a>
+  </div>
+</aside>
+
+<style>
+  aside {
+    min-width: 80px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    padding-right: 50px;
+  }
+
+  a {
+    color: white;
+    background: none;
+    border: none;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    font-weight: 700;
+  }
+
+  .menu-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+    gap: 1rem;
+  }
+
+  .gale-logo {
+    width: 100px;
+  }
+</style>

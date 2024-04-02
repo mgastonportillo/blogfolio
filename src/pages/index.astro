@@ -1,16 +1,27 @@
 ---
-
+import Layout from "../layout/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="mgastonportillo">
+  <h1>welcome, <code>intruder</code></h1>
+  <p><strong>Gale here</strong>. Although some weird people call me Gastón.</p>
+</Layout>
+
+<style>
+  h1 {
+    width: 100%;
+  }
+
+  h1 code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+
+  p strong {
+    color: rgb(var(--accent-light));
+  }
+</style>
