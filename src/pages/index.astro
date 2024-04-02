@@ -1,10 +1,25 @@
 ---
 import Layout from "../layout/Layout.astro";
+
+const names = ["intruder", "curious soul", "traveller"];
+const randomName = names[Math.floor(Math.random() * names.length)];
 ---
 
 <Layout title="mgastonportillo">
-  <h1>welcome, <code>intruder</code></h1>
-  <p><strong>Gale here</strong>. Although some weird people call me Gastón.</p>
+  <h1>welcome, <code>{randomName}</code></h1>
+  <p>
+    <strong>Gale here</strong>. Although some weird people call me Gastón.
+  </p>
+  <br /><br />
+  <p>
+    I'm a <strong>creative web developer</strong> focused on building respectful
+    yet engaging user experiences. <br />
+    Inspired by <a href="https://calmtech.com/">calm technology principles</a>,
+    I strive for <strong>efficient communication</strong>
+    through a balance of animations, 3D visuals, clear design, and intuitive navigation.
+  </p>
+  <br /><br />
+  <h1 class="plus-equal">Gorgeous visuals + Repectful UX = ❤️</h1>
 </Layout>
 
 <style>
@@ -19,6 +34,10 @@ import Layout from "../layout/Layout.astro";
     color: rgb(var(--accent-light));
     border-radius: 4px;
     padding: 0.3em 0.4em;
+  }
+
+  .plus-equal {
+    text-align: center;
   }
 
   p strong {
