@@ -1,5 +1,7 @@
 ---
 import GaleLogo from "../assets/img/gale-logo.svg?raw";
+
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <aside>
@@ -7,10 +9,10 @@ import GaleLogo from "../assets/img/gale-logo.svg?raw";
     <Fragment set:html={GaleLogo} />
   </div>
   <div class="menu-list">
-    <a href="/">home</a>
-    <a href="/about/">about</a>
-    <a href="#">blog</a>
-    <a href="#">links</a>
+    <a class={pathname === "/" ? "active" : ""} href="/">home</a>
+    <a class={pathname === "/about" ? "active" : ""} href="/about">about</a>
+    <a class={pathname === "/blog" ? "active" : ""} href="/blog">blog</a>
+    <a class={pathname === "/links" ? "active" : ""} href="/links">links</a>
   </div>
 </aside>
 
@@ -33,7 +35,7 @@ import GaleLogo from "../assets/img/gale-logo.svg?raw";
   }
 
   a:hover,
-  a:active {
+  .active {
     font-weight: 700;
   }
 
