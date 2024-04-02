@@ -6,7 +6,7 @@ const randomName = names[Math.floor(Math.random() * names.length)];
 ---
 
 <Layout title="mgastonportillo">
-  <h1>welcome, <code>{randomName}</code></h1>
+  <h1 class="welcome">welcome, <code>{randomName}</code></h1>
   <p>
     <strong>Gale here</strong>. Although some weird people call me Gastón.
   </p>
@@ -23,8 +23,7 @@ const randomName = names[Math.floor(Math.random() * names.length)];
 </Layout>
 
 <style>
-  h1 {
-    width: 100%;
+  h1.welcome {
   }
 
   h1 code {
