@@ -1,13 +1,10 @@
 ---
 import Layout from "../layout/Layout.astro";
-
-const names = ["curious soul", "traveller", "space cowboy"];
-const randomName = names[Math.floor(Math.random() * names.length)];
 ---
 
 <Layout title="mgastonportillo">
   <h1 class="welcome">
-    welcome, <code id="visitor-name">{randomName}</code>
+    welcome, <code id="visitor-alias">That didn't work</code>
   </h1>
   <p>
     <strong>Gale here</strong>. Although some people call me Gastón.
@@ -27,6 +24,18 @@ const randomName = names[Math.floor(Math.random() * names.length)];
     Gorgeous visuals&nbsp; + &nbsp;Repectful UX &nbsp;= ✨
   </h1>
 </Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const aliases = ["curious soul", "traveller", "space cowboy"];
+    const visitorAlias = document.querySelector("#visitor-alias");
+    let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
+
+    if (visitorAlias) {
+      visitorAlias.innerHTML = randomAlias;
+    }
+  });
+</script>
 
 <style>
   h1 code {
