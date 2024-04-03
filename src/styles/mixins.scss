@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+// Dynamic angle gradients
+@mixin accent-gradient($deg) {
+  background-image: linear-gradient($deg, $accent, $accent-light 40%);
+}
+
+@mixin accent-gradient-alt($deg) {
+  background-image: linear-gradient($deg, $accent-alt, $accent-light-alt 40%);
+}

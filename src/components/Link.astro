@@ -12,16 +12,18 @@ import linkIcon from "../assets/img/link.svg?raw";
   <span class="icon"><Fragment set:html={linkIcon} /></span>
 </a>
 
-<style>
+<style lang="scss">
+  @import "../styles/variables.scss";
+
   a span:first-child {
     font-size: 1.3rem;
     transition: 0.3s ease;
-    color: rgb(var(--accent-light-alt));
+    color: $accent-light-alt;
     text-decoration: underline;
   }
 
   a:hover span:first-child {
-    color: rgb(var(--accent-alt));
+    color: $accent-alt;
   }
 
   .icon {

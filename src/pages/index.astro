@@ -12,7 +12,7 @@ import Link from "../components/Link.astro";
   </p>
   <br /><br />
   <p>
-    I'm a <strong>creative web developer</strong> who cares about building respectful
+    I'm a <strong>creative web developer</strong> that cares about building respectful
     yet engaging user experiences.
   </p>
   <p>
@@ -39,12 +39,14 @@ import Link from "../components/Link.astro";
   });
 </script>
 
-<style>
+<style lang="scss">
+  @import "../styles/mixins.scss";
+
   h1 code {
     font-size: 0.8em;
     font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
+    background: rgba($accent-light, 12%);
+    color: $accent-light;
     border-radius: 4px;
     padding: 0.3em 0.4em;
   }
@@ -54,7 +56,7 @@ import Link from "../components/Link.astro";
   }
 
   p strong {
-    background: var(--accent-gradient);
+    @include accent-gradient(0deg);
     background-clip: text;
     -webkit-background-clip: text;
     text-fill-color: transparent;

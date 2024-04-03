@@ -68,7 +68,9 @@ const links: Link[] = [
   });
 </script>
 
-<style>
+<style lang="scss">
+  @import "../styles/variables.scss";
+
   aside {
     min-width: 80px;
     max-width: 80px;
@@ -104,11 +106,11 @@ const links: Link[] = [
   a:focus-visible:before {
     outline-offset: 0px;
     outline-color: transparent;
-    content: "> ";
+    content: $navbar-prefix;
   }
 
   a.active:before {
-    content: "> ";
+    content: $navbar-prefix;
   }
 
   .menu-list {

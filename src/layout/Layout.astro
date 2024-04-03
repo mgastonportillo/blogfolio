@@ -20,34 +20,20 @@ import Sidebar from "../components/Sidebar.astro";
     <link rel="stylesheet" href="https://use.typekit.net/wwa2fwb.css" />
     <ViewTransitions />
   </head>
+
   <body>
     <Sidebar />
+
     <section transition:animate="slide">
       <slot />
     </section>
-    <style is:global>
-      :root {
-        --accent: 136, 57, 234;
-        --accent-light: 224, 204, 250;
-        --accent-dark: 50, 10, 102;
-        --accent-alt: 175, 255, 170;
-        --accent-light-alt: 213, 255, 198;
-        --accent-dark-alt: 54, 146, 110;
-        --accent-gradient: linear-gradient(
-          0deg,
-          rgb(var(--accent)),
-          rgb(var(--accent-light)) 40%
-        );
-        --accent-gradient-alt: linear-gradient(
-          0deg,
-          rgb(var(--accent-alt)),
-          rgb(var(--accent-light-alt)) 40%
-        );
-      }
+
+    <style is:global lang="scss">
+      @import "../styles/variables.scss";
 
       html {
         font-family: "marine", system-ui, sans-serif;
-        background: #13151a;
+        background: $bg;
         display: flex;
         align-items: center;
         justify-content: center;
