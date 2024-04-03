@@ -1,11 +1,12 @@
 ---
 import Layout from "../layout/Layout.astro";
+import Link from "../components/Link.astro";
 ---
 
 <Layout title="Links">
   <h1>Links</h1>
   <br />
-  <a href={Astro.url.pathname}>Recursive link?</a>
+  <Link href={Astro.url.pathname}>Recursive link?</Link>
 </Layout>
 
 <style></style>

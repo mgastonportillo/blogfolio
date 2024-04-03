@@ -1,0 +1,32 @@
+---
+interface Props {
+  href: string;
+}
+
+let { href } = Astro.props;
+import linkIcon from "../assets/img/link.svg?raw";
+---
+
+<a href={href || "#"}>
+  <span><slot /></span>
+  <span class="icon"><Fragment set:html={linkIcon} /></span>
+</a>
+
+<style>
+  a span:first-child {
+    font-size: 1.3rem;
+    transition: 0.3s ease;
+    color: rgb(var(--accent-light-alt));
+    text-decoration: underline;
+  }
+
+  a:hover span:first-child {
+    color: rgb(var(--accent-alt));
+  }
+
+  .icon {
+    width: 10px;
+    margin: 0 4px 0 6px;
+    display: inline-block;
+  }
+</style>

@@ -23,7 +23,7 @@ const links: Link[] = [
       links.map(({ href, text }) => (
         <a
           href={href}
-          class={`no-icon ${href === Astro.url.pathname ? "active" : ""}`}
+          class={href === Astro.url.pathname ? "active" : ""}
           data-astro-history="replace"
         >
           {text}
@@ -32,6 +32,41 @@ const links: Link[] = [
     }
   </nav>
 </aside>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const nav = document.querySelector(".menu-list");
+    const items = nav.querySelectorAll("a");
+    const currentPathname = window.location.pathname;
+    let currentIndex = 0;
+
+    for (let i = 0; i < items.length - 1; i++) {
+      if (items[i].pathname === currentPathname) {
+        currentIndex = i;
+        break;
+      }
+    }
+
+    const focusItem = (index: number) => {
+      items[index].focus();
+    };
+
+    const handleNavigation = (event: KeyboardEvent) => {
+      if (event.key === "j") {
+        currentIndex = Math.min(currentIndex + 1, items.length - 1);
+        focusItem(currentIndex);
+      } else if (event.key === "k") {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        focusItem(currentIndex);
+      } else if (event.key === "o") {
+        items[currentIndex].classList.remove("focus");
+        items[currentIndex].click();
+      }
+    };
+
+    document.addEventListener("keydown", handleNavigation);
+  });
+</script>
 
 <style>
   aside {
@@ -58,6 +93,18 @@ const links: Link[] = [
   a.active {
     color: white;
     font-weight: 700;
+  }
+
+  a:focus,
+  a:focus-visible {
+    outline: none;
+  }
+
+  a:focus:before,
+  a:focus-visible:before {
+    outline-offset: 0px;
+    outline-color: transparent;
+    content: "> ";
   }
 
   a.active:before {

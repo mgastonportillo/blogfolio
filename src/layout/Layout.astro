@@ -54,27 +54,6 @@ import Sidebar from "../components/Sidebar.astro";
         height: 100%;
       }
 
-      a {
-        font-size: 1.3rem;
-        transition: 0.3s ease;
-        color: rgb(var(--accent-light-alt));
-      }
-
-      a:hover {
-        color: rgb(var(--accent-alt));
-      }
-
-      a:after {
-        content: " ";
-        background-image: url("../assets/img/link.svg");
-        background-size: 10px 10px;
-        background-repeat: no-repeat;
-        margin: 0 4px 0 6px;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-      }
-
       body {
         display: flex;
         width: 75%;
@@ -91,6 +70,10 @@ import Sidebar from "../components/Sidebar.astro";
       p {
         font-size: 1.3rem;
         color: white;
+      }
+
+      a {
+        font-size: 1.3rem;
       }
 
       code {
