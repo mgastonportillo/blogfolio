@@ -40,7 +40,7 @@ const links: Link[] = [
     const currentPathname = window.location.pathname;
     let currentIndex = 0;
 
-    for (let i = 0; i < items.length - 1; i++) {
+    for (let i = 0; i < items.length; i++) {
       if (items[i].pathname === currentPathname) {
         currentIndex = i;
         break;
