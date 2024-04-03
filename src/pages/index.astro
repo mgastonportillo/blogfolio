@@ -1,31 +1,34 @@
 ---
 import Layout from "../layout/Layout.astro";
 
-const names = ["intruder", "curious soul", "traveller"];
+const names = ["curious soul", "traveller", "space cowboy"];
 const randomName = names[Math.floor(Math.random() * names.length)];
 ---
 
 <Layout title="mgastonportillo">
-  <h1 class="welcome">welcome, <code>{randomName}</code></h1>
+  <h1 class="welcome">
+    welcome, <code id="visitor-name">{randomName}</code>
+  </h1>
   <p>
-    <strong>Gale here</strong>. Although some weird people call me Gastón.
+    <strong>Gale here</strong>. Although some people call me Gastón.
   </p>
   <br /><br />
   <p>
     I'm a <strong>creative web developer</strong> focused on building respectful
-    yet engaging user experiences. <br />
+    yet engaging user experiences.
+  </p>
+  <p>
     Inspired by <a href="https://calmtech.com/">calm technology principles</a>,
     I strive for <strong>efficient communication</strong>
     through a balance of animations, 3D visuals, clear design, and intuitive navigation.
   </p>
   <br /><br />
-  <h1 class="plus-equal">Gorgeous visuals + Repectful UX = ❤️</h1>
+  <h1 class="plus-equal">
+    Gorgeous visuals&nbsp; + &nbsp;Repectful UX &nbsp;= ✨
+  </h1>
 </Layout>
 
 <style>
-  h1.welcome {
-  }
-
   h1 code {
     font-size: 0.8em;
     font-weight: bold;
@@ -40,6 +43,13 @@ const randomName = names[Math.floor(Math.random() * names.length)];
   }
 
   p strong {
-    color: rgb(var(--accent-light));
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: background 10s ease infinite;
   }
 </style>

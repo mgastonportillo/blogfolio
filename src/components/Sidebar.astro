@@ -21,7 +21,11 @@ const links: Link[] = [
   <nav class="menu-list">
     {
       links.map(({ href, text }) => (
-        <a href={href} class={href === Astro.url.pathname ? "active" : ""}>
+        <a
+          href={href}
+          class={`no-icon ${href === Astro.url.pathname ? "active" : ""}`}
+          data-astro-history="replace"
+        >
           {text}
         </a>
       ))
@@ -32,6 +36,7 @@ const links: Link[] = [
 <style>
   aside {
     min-width: 80px;
+    max-width: 80px;
     min-height: 500px;
     display: flex;
     align-items: center;
@@ -46,6 +51,7 @@ const links: Link[] = [
     border: none;
     text-decoration: none;
     transition: none;
+    font-size: 1.2rem;
   }
 
   a:hover,

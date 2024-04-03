@@ -17,6 +17,7 @@ import Sidebar from "../components/Sidebar.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wwa2fwb.css" />
     <ViewTransitions />
   </head>
   <body>
@@ -33,21 +34,19 @@ import Sidebar from "../components/Sidebar.astro";
         --accent-light-alt: 213, 255, 198;
         --accent-dark-alt: 54, 146, 110;
         --accent-gradient: linear-gradient(
-          45deg,
+          0deg,
           rgb(var(--accent)),
-          rgb(var(--accent-light)) 30%,
-          white 60%
+          rgb(var(--accent-light)) 40%
         );
-        --accent-gredient-alt: linear-gradient(
-          45deg,
+        --accent-gradient-alt: linear-gradient(
+          0deg,
           rgb(var(--accent-alt)),
-          rgb(var(--accent-light-alt)) 30%,
-          white 60%
+          rgb(var(--accent-light-alt)) 40%
         );
       }
 
       html {
-        font-family: system-ui, sans-serif;
+        font-family: "marine", system-ui, sans-serif;
         background: #13151a;
         display: flex;
         align-items: center;
@@ -56,12 +55,24 @@ import Sidebar from "../components/Sidebar.astro";
       }
 
       a {
+        font-size: 1.3rem;
         transition: 0.3s ease;
-        color: rgb(var(--accent-light));
+        color: rgb(var(--accent-light-alt));
       }
 
       a:hover {
         color: rgb(var(--accent-alt));
+      }
+
+      a:after {
+        content: " ";
+        background-image: url("../assets/img/link.svg");
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
+        margin: 0 4px 0 6px;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
       }
 
       body {
@@ -72,13 +83,13 @@ import Sidebar from "../components/Sidebar.astro";
 
       h1 {
         color: white;
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
 
       h2,
       h3,
       p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         color: white;
       }
 
@@ -92,6 +103,10 @@ import Sidebar from "../components/Sidebar.astro";
           Bitstream Vera Sans Mono,
           Courier New,
           monospace;
+      }
+
+      .no-icon:after {
+        display: none;
       }
     </style>
   </body>
