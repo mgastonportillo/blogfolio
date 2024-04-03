@@ -1,6 +1,8 @@
 ---
 import Layout from "../layout/Layout.astro";
 import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import sparkles from "../assets/img/sparkles.png";
 ---
 
 <Layout title="mgastonportillo">
@@ -23,46 +25,57 @@ import Link from "../components/Link.astro";
   </p>
   <br /><br />
   <h1 class="plus-equal">
-    Gorgeous visuals&nbsp; + &nbsp;Repectful UX &nbsp;= ✨
-  </h1>
-</Layout>
+    Gorgeous visuals&nbsp; + &nbsp;Repectful UX&nbsp; =
+    <span class="sparkles">
+      <Image src={sparkles} alt="Sparkles" />
+    </span>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const aliases = ["curious soul", "traveller", "space cowboy"];
-    const visitorAlias = document.querySelector("#visitor-alias");
-    let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
+    <script>
+      document.addEventListener("astro:page-load", () => {
+        const aliases = ["curious soul", "traveller", "space cowboy"];
+        const visitorAlias = document.querySelector("#visitor-alias");
+        let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
 
-    if (visitorAlias) {
-      visitorAlias.innerHTML = randomAlias;
-    }
-  });
-</script>
+        if (visitorAlias) {
+          visitorAlias.innerHTML = randomAlias;
+        }
+      });
+    </script>
 
-<style lang="scss">
-  @import "../styles/mixins.scss";
+    <style lang="scss">
+      @import "../styles/mixins.scss";
 
-  h1 code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba($accent-light, 12%);
-    color: $accent-light;
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
+      .waving-hand img,
+      .sparkles img {
+        vertical-align: middle;
+        height: 3rem;
+        width: 3rem;
+        padding-bottom: 8px;
+      }
 
-  .plus-equal {
-    text-align: center;
-  }
+      h1 code {
+        font-size: 0.8em;
+        font-weight: bold;
+        background: rgba($accent-light, 12%);
+        color: $accent-light;
+        border-radius: 4px;
+        padding: 0.3em 0.4em;
+      }
 
-  p strong {
-    @include accent-gradient(0deg);
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: AnimationName 10s ease infinite;
-    -moz-animation: AnimationName 10s ease infinite;
-    animation: background 10s ease infinite;
-  }
-</style>
+      .plus-equal {
+        text-align: center;
+      }
+
+      p strong {
+        @include accent-gradient(0deg);
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: AnimationName 10s ease infinite;
+        -moz-animation: AnimationName 10s ease infinite;
+        animation: background 10s ease infinite;
+      }
+    </style>
+  </h1></Layout
+>
