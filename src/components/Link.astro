@@ -7,9 +7,9 @@ let { href } = Astro.props;
 import linkIcon from "../assets/img/link.svg?raw";
 ---
 
-<a href={href || "#"}>
+<a href={href}>
   <span><slot /></span>
-  <span class="icon"><Fragment set:html={linkIcon} /></span>
+  <span class="icon"><i><Fragment set:html={linkIcon} /></i></span>
 </a>
 
 <style lang="scss">

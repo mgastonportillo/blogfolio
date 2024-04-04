@@ -1,11 +1,37 @@
 ---
 import Layout from "../layout/Layout.astro";
+import Link from "../components/Link.astro";
+import Highlight from "../components/Highlight.astro";
 ---
 
 <Layout title="About me">
   <h1>About</h1>
   <br />
-  <p>Learning Astro while creating a nice and simple portfolio for myself.</p>
+  <p>
+    Figuring <Link href="https://astro.build/">Astro</Link> out while creating a
+    nice and simple "blogfolio" for myself.
+  </p>
+  <br />
+  <Highlight type={"info"} style={"purple"}
+    ><strong>Tip:</strong> You can navigate the sidebar using a limited set of vim
+    keybindings, like <kbd>j</kbd>, <kbd>k</kbd> and <kbd>o</kbd></Highlight
+  >
 </Layout>
 
-<style></style>
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  strong {
+    margin-right: 10px;
+  }
+
+  kbd {
+    color: $accent-light;
+    border-radius: 3px;
+    padding: 0.25em 0.42em;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+  }
+</style>

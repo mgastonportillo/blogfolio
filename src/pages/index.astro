@@ -10,7 +10,7 @@ import sparkles from "../assets/img/sparkles.png";
     welcome, <code id="visitor-alias"></code>
   </h1>
   <p>
-    <strong>Gale here</strong>. Although some people call me Gastón.
+    <strong>Gale here</strong>. Though some call me Gastón.
   </p>
   <br /><br />
   <p>
@@ -18,65 +18,65 @@ import sparkles from "../assets/img/sparkles.png";
     yet engaging user experiences.
   </p>
   <p>
-    Inspired by <Link href="https://calmtech.com/">
-      calm technology principles</Link
-    >, I strive for <strong>efficient communication</strong>
+    Inspired by
+    <Link href="https://calmtech.com/"> calm technology principles </Link>, I
+    strive for <strong>efficient communication</strong>
     through a balanced use of animations, 3D visuals, clear design, and intuitive
     navigation.
   </p>
   <br /><br />
   <h1 class="plus-equal">
-    Gorgeous visuals&nbsp; + &nbsp;Repectful UX&nbsp; =&nbsp;
+    Gorgeous visuals&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;
     <span class="sparkles">
       <Image src={sparkles} alt="Sparkles" />
     </span>
+  </h1>
+</Layout>
 
-    <script>
-      document.addEventListener("astro:page-load", () => {
-        const aliases = ["curious soul", "traveller", "space cowboy"];
-        const visitorAlias = document.querySelector("#visitor-alias");
-        let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const aliases = ["sojourner", "traveller", "stargazer", "space cowboy"];
+    const visitorAlias = document.querySelector("#visitor-alias");
+    let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
 
-        if (visitorAlias) {
-          visitorAlias.innerHTML = randomAlias;
-        }
-      });
-    </script>
+    if (visitorAlias) {
+      visitorAlias.innerHTML = randomAlias;
+    }
+  });
+</script>
 
-    <style lang="scss">
-      @import "../styles/mixins.scss";
+<style lang="scss">
+  @import "../styles/mixins.scss";
 
-      .waving-hand img,
-      .sparkles img {
-        vertical-align: middle;
-        height: 3rem;
-        width: 3rem;
-        padding-bottom: 8px;
-      }
+  .waving-hand img,
+  .sparkles img {
+    vertical-align: middle;
+    height: 3rem;
+    width: 3rem;
+    padding-bottom: 8px;
+  }
 
-      h1 code {
-        font-size: 0.8em;
-        font-weight: bold;
-        background: rgba($accent-light, 12%);
-        color: $accent-light;
-        border-radius: 4px;
-        padding: 0.3em 0.4em;
-      }
+  h1 code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba($accent-light, 12%);
+    color: $accent-light;
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
 
-      .plus-equal {
-        text-align: center;
-      }
+  .plus-equal {
+    text-align: center;
+  }
 
-      p strong {
-        @include accent-gradient(0deg);
-        background-clip: text;
-        -webkit-background-clip: text;
-        text-fill-color: transparent;
-        -webkit-text-fill-color: transparent;
-        -webkit-animation: AnimationName 10s ease infinite;
-        -moz-animation: AnimationName 10s ease infinite;
-        animation: background 10s ease infinite;
-      }
-    </style>
-  </h1></Layout
->
+  p strong {
+    @include accent-gradient(0deg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: background 10s ease infinite;
+  }
+</style>
