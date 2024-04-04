@@ -1,11 +1,16 @@
 // Colors
-$bg: rgb(19 21 26);
+$bg: rgb(19, 21, 26);
 $accent: rgb(136, 57, 234);
 $accent-light: rgb(224, 204, 250);
 $accent-dark: rgb(50, 10, 102);
 $accent-alt: rgb(175, 255, 170);
 $accent-light-alt: rgb(213, 255, 198);
 $accent-dark-alt: rgb(54, 146, 110);
+$red-hl: rgb(163, 0, 24);
+$green-hl: $accent-dark-alt;
+$blue-hl: rgb(0, 176, 255);
+$yellow-hl: rgb(255, 255, 0);
+$purple-hl: $accent-light;
 
 // Miscelaneous
 $navbar-prefix: "> ";
