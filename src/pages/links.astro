@@ -4,9 +4,9 @@ import Link from "../components/Link.astro";
 ---
 
 <Layout title="Links">
-  <h1>Links</h1>
-  <br />
-  <Link href={Astro.url.pathname}>Recursive link?</Link>
+  <div aria-labelledby="links">
+    <Link href={Astro.url.pathname}>Recursive link?</Link>
+  </div>
 </Layout>
 
 <style></style>

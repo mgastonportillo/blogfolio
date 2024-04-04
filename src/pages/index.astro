@@ -6,31 +6,33 @@ import sparkles from "../assets/img/sparkles.png";
 ---
 
 <Layout title="mgastonportillo">
-  <h1 class="welcome">
-    welcome, <code id="visitor-alias"></code>
-  </h1>
-  <p>
-    <strong>I'm Gale</strong> (though most call me Gastón).
-  </p>
-  <br />
-  <p>
-    A <strong>creative web developer</strong> commited to build experiences that
-    <strong>delight without distraction</strong>.
-  </p>
-  <p>
-    Inspired by
-    <Link href="https://calmtech.com/"> calm technology principles</Link>, I
-    design websites that invite to navigate them effortlessly in the service of
-    what I call <strong>effective visual communication</strong>, while still
-    leaving room for magic.
-  </p>
-  <br />
-  <h1 class="plus-equal">
-    Gorgeous UI&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;
-    <span class="sparkles">
-      <Image src={sparkles} alt="Sparkles" />
-    </span>
-  </h1>
+  <div aria-labelledby="home">
+    <h1 class="welcome">
+      welcome, <code id="visitor-alias"></code>
+    </h1>
+    <p>
+      I'm <strong>Gale</strong> (though most call me Gastón).
+    </p>
+    <br />
+    <p>
+      A <strong>creative web developer</strong> commited to build experiences that
+      <strong>delight without distraction</strong>.
+    </p>
+    <p>
+      Inspired by
+      <Link href="https://calmtech.com/"> calm technology principles</Link>, I
+      design websites that invite the user to navigate them effortlessly, in the
+      service of what I call <strong>effective visual communication</strong>,
+      while still leaving room for magic.
+    </p>
+    <br />
+    <h1 class="plus-equal">
+      Gorgeous UI&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;
+      <span class="sparkles">
+        <Image loading="eager" src={sparkles} alt="Sparkles" />
+      </span>
+    </h1>
+  </div>
 </Layout>
 
 <script>

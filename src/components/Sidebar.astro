@@ -24,6 +24,7 @@ const links: Link[] = [
         <a
           href={href}
           class={href === Astro.url.pathname ? "active" : ""}
+          id={text}
           data-astro-history="replace"
         >
           {text}
