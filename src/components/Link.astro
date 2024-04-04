@@ -15,11 +15,15 @@ import linkIcon from "../assets/img/link.svg?raw";
 <style lang="scss">
   @import "../styles/variables.scss";
 
-  a span:first-child {
-    font-size: 1.3rem;
-    transition: 0.3s ease;
-    color: $accent-light-alt;
-    text-decoration: underline;
+  a {
+    text-decoration: none;
+
+    span:first-child {
+      font-size: 1.3rem;
+      transition: 0.3s ease;
+      color: $accent-light-alt;
+      text-decoration: underline;
+    }
   }
 
   a:hover span:first-child {
@@ -28,7 +32,7 @@ import linkIcon from "../assets/img/link.svg?raw";
 
   .icon {
     width: 10px;
-    margin: 0 4px 0 6px;
+    margin: 0 2px 0 2px;
     display: inline-block;
   }
 </style>
