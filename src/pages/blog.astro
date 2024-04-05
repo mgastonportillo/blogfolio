@@ -1,11 +1,25 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layout/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const posts = await getCollection("blog");
 ---
 
 <Layout title="Blog">
   <div aria-labelledby="blog">
-    <p>Does this count as a post?</p>
+    <ul>
+      {
+        posts.map((post) => (
+          <BlogPost
+            href={`/blog/${post.slug}`}
+            title={post.data.title}
+            date={post.data.pubDate.toString().slice(0, 10)}
+          />
+        ))
+      }
+    </ul>
   </div>
 </Layout>
 
-<style></style>
+<style lang="scss"></style>

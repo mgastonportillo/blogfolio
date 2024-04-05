@@ -15,23 +15,25 @@ const links: Link[] = [
 ---
 
 <aside>
-  <div class="gale-logo">
-    <Fragment set:html={GaleLogo} />
+  <div class="nav-wrapper">
+    <div class="gale-logo">
+      <Fragment set:html={GaleLogo} />
+    </div>
+    <nav class="menu-list">
+      {
+        links.map(({ href, text }) => (
+          <a
+            href={href}
+            class={href === Astro.url.pathname ? "active" : ""}
+            id={text}
+            data-astro-history="replace"
+          >
+            {text}
+          </a>
+        ))
+      }
+    </nav>
   </div>
-  <nav class="menu-list">
-    {
-      links.map(({ href, text }) => (
-        <a
-          href={href}
-          class={href === Astro.url.pathname ? "active" : ""}
-          id={text}
-          data-astro-history="replace"
-        >
-          {text}
-        </a>
-      ))
-    }
-  </nav>
 </aside>
 
 <script>
@@ -79,10 +81,16 @@ const links: Link[] = [
     max-width: 80px;
     min-height: 500px;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: start;
     flex-direction: column;
     padding-right: 70px;
+
+    & .nav-wrapper {
+      top: 12rem;
+      position: sticky;
+    }
   }
 
   a {

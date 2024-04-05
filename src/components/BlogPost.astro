@@ -1,0 +1,19 @@
+---
+import Link from "../components/Link.astro";
+
+const { href, title, date } = Astro.props;
+---
+
+<li>
+  <span>{date}</span>&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;<Link href={href}
+    >{title}</Link
+  >
+</li>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  span {
+    color: darkgrey;
+  }
+</style>

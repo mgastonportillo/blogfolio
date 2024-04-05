@@ -4,9 +4,33 @@ import Link from "../components/Link.astro";
 ---
 
 <Layout title="Useful links">
-  <div aria-labelledby="links">
-    <Link href={Astro.url.pathname}>Recursive link?</Link>
+  <div class="links" aria-labelledby="links">
+    <ul>
+      <li>
+        <p>Is this really a</p>
+        <Link href={Astro.url.pathname}>Recursive link?</Link>
+      </li>
+      <li>
+        <p>Test 2</p>
+        <Link href={Astro.url.pathname}>Test 2</Link>
+      </li>
+      <li>
+        <p>Test 3</p>
+        <Link href={Astro.url.pathname}>Test 3</Link>
+      </li>
+      <li>
+        <p>Test 4</p>
+        <Link href={Astro.url.pathname}>Test 4</Link>
+      </li>
+      <li>
+        <p>Test 5</p>
+        <Link href={Astro.url.pathname}>Test 5</Link>
+      </li>
+    </ul>
   </div>
 </Layout>
 
-<style></style>
+<style lang="scss">
+  .links {
+  }
+</style>

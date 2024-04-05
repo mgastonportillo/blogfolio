@@ -1,0 +1,37 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <a href="/blog/">&#60; posts</a>
+  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <slot />
+</Layout>
+
+<style lang="scss">
+  a {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 8rem;
+
+    &:before:hover {
+      content: "< ";
+    }
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  p {
+    color: darkgrey;
+  }
+</style>
+
+<style lang="scss" is:inline>
+  hr {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+</style>
