@@ -11,12 +11,12 @@ import sparkles from "../assets/img/sparkles.png";
       welcome, <code id="visitor-alias"></code>
     </h1>
     <p>
-      I'm <strong>Gale</strong> (though most call me Gastón).
+      I'm <em>Gale</em> (though most call me Gastón).
     </p>
     <br />
     <p>
-      A <strong>creative web developer</strong> commited to build experiences that
-      <strong>delight without distraction</strong>.
+      A <em>creative web developer</em> commited to build experiences that
+      <em>delight without distraction</em>.
     </p>
     <p>
       Inspired by
@@ -49,7 +49,6 @@ import sparkles from "../assets/img/sparkles.png";
 <style lang="scss">
   @import "../styles/mixins.scss";
 
-  .waving-hand img,
   .sparkles img {
     vertical-align: middle;
     height: 3rem;
@@ -57,7 +56,7 @@ import sparkles from "../assets/img/sparkles.png";
     padding-bottom: 8px;
   }
 
-  h1 code {
+  code {
     font-size: 0.8em;
     font-weight: bold;
     background: rgba($accent-light, 12%);
@@ -70,7 +69,7 @@ import sparkles from "../assets/img/sparkles.png";
     text-align: center;
   }
 
-  p strong {
+  em {
     @include accent-gradient(0deg);
     background-clip: text;
     -webkit-background-clip: text;
