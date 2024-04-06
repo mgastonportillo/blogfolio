@@ -6,18 +6,26 @@ interface Props {
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
 import Sidebar from "../components/Sidebar.astro";
-import galeLogo from "../assets/img/gale-logo.svg";
-
-const desc = "Gale | Creative Web Dev from 🇦🇷";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="og:image" content={galeLogo.src} />
-    <meta name="og:description" content={desc} />
-    <meta name="og:url" content="https://mgastonportillo.vercel.app" />
+    <!-- Facebook meta tags -->
+    <meta property="og:url" content="https://mgastonportillo.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gastón, a creative web developer" />
+    <meta property="og:description" content="Welcome to my Blogfolio!" />
+    <meta property="og:image" content="/img/thumbnail.jpg" />
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="mgastonportillo.vercel.app" />
+    <meta property="twitter:url" content="https://mgastonportillo.vercel.app" />
+    <meta name="twitter:title" content="Gastón, a creative web developer" />
+    <meta name="twitter:description" content="Welcome to my Blogfolio!" />
+    <meta name="twitter:image" content="/img/thumbnail.jpg" />
+    <!-- Local meta tags -->
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
