@@ -12,8 +12,12 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const dayMonth = entry.data.pubDate.toDateString().slice(4, 10);
+const year = entry.data.pubDate.toDateString().slice(11, 15);
+const date = `${dayMonth}ᵗʰ, ${year}`;
 ---
 
-<MarkdownPostLayout frontmatter={entry.data}>
+<MarkdownPostLayout frontmatter={entry.data} ftDate={date}>
   <Content />
 </MarkdownPostLayout>

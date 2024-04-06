@@ -5,9 +5,7 @@ const { href, title, date } = Astro.props;
 ---
 
 <li>
-  <span>{date}</span>&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;<Link href={href}
-    >{title}</Link
-  >
+  <span>{date}</span><Link href={href}>{title}</Link>
 </li>
 
 <style lang="scss">
@@ -15,5 +13,6 @@ const { href, title, date } = Astro.props;
 
   span {
     color: darkgrey;
+    margin-right: 1rem;
   }
 </style>

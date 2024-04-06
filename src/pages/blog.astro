@@ -10,13 +10,18 @@ const posts = await getCollection("blog");
   <div aria-labelledby="blog">
     <ul>
       {
-        posts.map((post) => (
-          <BlogPost
-            href={`/blog/${post.slug}`}
-            title={post.data.title}
-            date={post.data.pubDate.toString().slice(0, 10)}
-          />
-        ))
+        posts.map((post) => {
+          const dayMonth = post.data.pubDate.toDateString().slice(4, 10);
+          const year = post.data.pubDate.toDateString().slice(11, 15);
+          const date = `${dayMonth}ᵗʰ, ${year}`;
+          return (
+            <BlogPost
+              href={`/blog/${post.slug}`}
+              title={post.data.title}
+              date={date}
+            />
+          );
+        })
       }
     </ul>
   </div>

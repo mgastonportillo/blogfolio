@@ -1,11 +1,11 @@
 ---
 import Layout from "./Layout.astro";
-const { frontmatter } = Astro.props;
+const { frontmatter, ftDate } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
   <a href="/blog/">&#60; posts</a>
-  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p>{ftDate}</p>
   <slot />
 </Layout>
 
