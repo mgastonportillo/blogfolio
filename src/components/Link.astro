@@ -8,8 +8,8 @@ import linkIcon from "../assets/img/link.svg?raw";
 ---
 
 <a href={href}>
-  <span><slot /></span>
-  <span class="icon"><i><Fragment set:html={linkIcon} /></i></span>
+  <span class="text"><slot /></span>
+  <span class="icon" aria-hidden="true"><Fragment set:html={linkIcon} /></span>
 </a>
 
 <style lang="scss">
@@ -18,21 +18,21 @@ import linkIcon from "../assets/img/link.svg?raw";
   a {
     text-decoration: none;
 
-    span:first-child {
+    .text {
       font-size: 1.3rem;
       transition: 0.3s ease;
       color: $accent-light-alt;
       text-decoration: underline;
     }
-  }
 
-  a:hover span:first-child {
-    color: $accent-alt;
-  }
+    &:hover .text {
+      color: $accent-alt;
+    }
 
-  .icon {
-    width: 10px;
-    margin: 0 2px 0 2px;
-    display: inline-block;
+    .icon {
+      width: 10px;
+      margin: 0 2px 0 2px;
+      display: inline-block;
+    }
   }
 </style>

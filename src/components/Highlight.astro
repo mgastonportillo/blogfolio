@@ -9,9 +9,9 @@ import { hlIcons } from "../utils/hlIcons";
 ---
 
 <div class={`hightlight ${style || type}`}>
-  <i>
+  <span aria-hidden="true">
     <Fragment set:html={hlIcons[type]} />
-  </i>
+  </span>
   <p>
     <slot />
   </p>
@@ -54,7 +54,7 @@ import { hlIcons } from "../utils/hlIcons";
       background: rgba($purple-hl, 0.05);
     }
 
-    i {
+    span {
       font-style: normal;
       align-self: center;
       margin-right: 1em;
