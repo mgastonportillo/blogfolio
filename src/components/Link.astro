@@ -1,13 +1,14 @@
 ---
 interface Props {
   href: string;
+  empty?: string;
 }
 
-let { href } = Astro.props;
+let { href, empty } = Astro.props;
 import linkIcon from "../assets/img/link.svg?raw";
 ---
 
-<a href={href}>
+<a href={href} data-empty-link-text={empty}>
   <span class="text"><slot /></span>
   <span class="icon" aria-hidden="true"><Fragment set:html={linkIcon} /></span>
 </a>
@@ -18,15 +19,26 @@ import linkIcon from "../assets/img/link.svg?raw";
   a {
     text-decoration: none;
 
-    .text {
+    &::before {
       font-size: 1.3rem;
       transition: 0.3s ease;
       color: $accent-light-alt;
       text-decoration: underline;
     }
 
-    &:hover .text {
+    &:hover::before {
       color: $accent-alt;
+    }
+
+    .text {
+      font-size: 1.3rem;
+      transition: 0.3s ease;
+      color: $accent-light-alt;
+      text-decoration: underline;
+
+      &:hover {
+        color: $accent-alt;
+      }
     }
 
     .icon {
