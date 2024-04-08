@@ -13,8 +13,8 @@
     padding: 1rem 1.5rem;
     width: fit-content;
     border: 1px solid;
-    border-color: rgba($purple-hl, 50%);
-    background: rgba($purple-hl, 10%);
+    border-color: rgba($purple-hl, 0.5);
+    background: rgba($purple-hl, 0.05);
     border-radius: 6px;
     font-family: "marine", system-ui, sans-serif;
 
@@ -28,20 +28,24 @@
 <style lang="scss" is:global>
   @import "../styles/variables.scss";
 
-  .toc-wrapper ul {
-    margin-left: -1rem;
+  .toc-wrapper {
+    margin-top: 1rem;
 
-    li {
-      padding-bottom: 0;
-      border: none;
+    ul {
+      margin: auto auto 0.2rem -1rem;
 
-      a {
-        color: $accent-light-alt;
-        font-size: 1.2rem;
-        text-decoration: none;
+      li {
+        padding-bottom: 0;
+        border: none;
 
-        &:hover {
-          color: $accent-alt;
+        a {
+          color: $accent-light-alt;
+          font-size: 1.2rem;
+          text-decoration: none;
+
+          &:hover {
+            color: $accent-alt;
+          }
         }
       }
     }

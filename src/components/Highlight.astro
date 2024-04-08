@@ -10,7 +10,7 @@ import { hlIcons } from "../utils/hlIcons";
 
 <div class={`hightlight ${style || type}`}>
   <span aria-hidden="true">
-    <Fragment set:html={hlIcons[type]} />
+    <Fragment set:html={hlIcons[type] || hlIcons["tip"]} />
   </span>
   <p>
     <slot />
@@ -25,6 +25,7 @@ import { hlIcons } from "../utils/hlIcons";
     padding: 0.66em 1.8em 0.66em 1.8em;
     border: 1px solid;
     border-radius: 6px;
+    width: fit-content;
 
     &.red,
     &.warn {

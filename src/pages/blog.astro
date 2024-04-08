@@ -32,26 +32,6 @@ const posts = await getCollection("blog");
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    gap: 1em;
-
-    li {
-      color: white;
-      padding-bottom: 0.75em;
-      border-bottom: 1px solid rgba(white, 0.05);
-
-      p {
-        margin-block: 0;
-        line-height: 1;
-      }
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      &::marker {
-        content: "";
-        display: none;
-      }
-    }
+    gap: 0.5em;
   }
 </style>

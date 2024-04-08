@@ -11,8 +11,23 @@ const { href, title, date } = Astro.props;
 <style lang="scss">
   @import "../styles/variables.scss";
 
-  span {
-    color: darkgrey;
-    margin-right: 1rem;
+  li {
+    color: white;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(white, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &::marker {
+      content: "";
+      display: none;
+    }
+
+    span {
+      color: darkgrey;
+      margin-right: 1rem;
+    }
   }
 </style>
