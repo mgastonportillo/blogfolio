@@ -112,7 +112,7 @@ const links: Link[] = [
         gap: 1rem;
 
         a {
-          color: white;
+          color: $white;
           background: none;
           border: none;
           text-decoration: none;
@@ -144,12 +144,12 @@ const links: Link[] = [
     }
   }
 
-  @media reader, speech, aural {
-    a.active:before,
+  /* @media reader, speech, aural {
+    a::before,
     a:focus:before,
     a:focus-visible:before {
       display: none;
       visibility: hidden;
     }
-  }
+  } */
 </style>

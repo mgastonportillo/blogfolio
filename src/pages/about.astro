@@ -38,11 +38,15 @@ import Highlight from "../components/Highlight.astro";
 
   kbd {
     color: $accent-light;
-    border-radius: 3px;
-    padding: 0.25em 0.42em;
-    white-space: nowrap;
-    display: inline-block;
     font-size: 0.85em;
     font-weight: 700;
+
+    &::before {
+      content: "[";
+    }
+
+    &::after {
+      content: "]";
+    }
   }
 </style>

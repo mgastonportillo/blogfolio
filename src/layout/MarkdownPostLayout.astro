@@ -1,12 +1,18 @@
 ---
 import Layout from "./Layout.astro";
-const { frontmatter, ftDate } = Astro.props;
+const { frontmatter } = Astro.props;
+
+const dayMonth = frontmatter.pubDate.toDateString().slice(4, 10);
+const year = frontmatter.pubDate.toDateString().slice(11, 15);
+const date = `${dayMonth}ᵗʰ, ${year}`;
 ---
 
 <Layout title={frontmatter.title}>
   <a href="/blog/">&#60; posts</a>
-  <p>{ftDate}</p>
-  <slot />
+  <p>{date}</p>
+  <div class="md-wrapper">
+    <slot />
+  </div>
 </Layout>
 
 <style lang="scss">
@@ -30,8 +36,12 @@ const { frontmatter, ftDate } = Astro.props;
   }
 </style>
 
-<style lang="scss" is:inline>
-  hr {
-    border-color: rgba(255, 255, 255, 0.1);
+<style lang="scss" is:global>
+  @import "../styles/variables.scss";
+
+  .md-wrapper {
+    hr {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
   }
 </style>
