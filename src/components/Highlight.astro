@@ -1,20 +1,18 @@
 ---
 interface Props {
-  style?: "red" | "green" | "blue" | "yellow" | "purple";
-  type?: "info" | "warn" | "tip";
+  color?: "red" | "green" | "blue" | "yellow" | "purple";
+  type?: "info" | "warn" | "star" | "asterisk";
   pre?: string;
   pos?: "center" | "right";
 }
 
-const { style, pos, pre, type = "generic" } = Astro.props;
+const { color, pos, pre, type = "star" } = Astro.props;
 import { hlIcons } from "../utils/hlIcons";
-
-console.log(pos);
 ---
 
-<div class={`hightlight ${style || type || "tip"} ${pos}`}>
+<div class={`hightlight ${type} ${color || type} ${pos}`}>
   <span aria-hidden="true">
-    <Fragment set:html={hlIcons[type] || hlIcons["tip"]} />
+    <Fragment set:html={hlIcons[type] || hlIcons["star"]} />
   </span>
   <p>
     <em class={!pre ? "hidden" : ""}>{pre}&nbsp;</em>
@@ -63,8 +61,7 @@ console.log(pos);
       background: rgba($yellow-hl, 0.03);
     }
 
-    &.purple,
-    &.tip {
+    &.purple {
       border-color: rgba($purple-hl, 0.5);
       background: rgba($purple-hl, 0.05);
     }
