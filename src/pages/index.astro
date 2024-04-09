@@ -30,18 +30,6 @@ import PlusEqual from "../components/PlusEqual.astro";
   </div>
 </Layout>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const aliases = ["sojourner", "traveller", "stargazer", "space cowboy"];
-    const visitorAlias = document.querySelector("#visitor-alias");
-    let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
-
-    if (visitorAlias) {
-      visitorAlias.innerHTML = randomAlias;
-    }
-  });
-</script>
-
 <style lang="scss">
   @import "../styles/mixins.scss";
 
