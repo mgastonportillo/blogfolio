@@ -1,36 +1,32 @@
 ---
 import Layout from "../layout/Layout.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import sparkles from "../assets/img/sparkles.png";
+import GreetingsAlias from "../components/GreetingsAlias.astro";
+import PlusEqual from "../components/PlusEqual.astro";
 ---
 
 <Layout title="mgastonportillo">
   <div aria-labelledby="home">
-    <h1 class="welcome">
-      welcome, <code id="visitor-alias"></code>
-    </h1>
+    <h1 class="welcome">welcome, <GreetingsAlias /></h1>
+
     <p>
       I'm <em>Gale</em> (though most call me Gastón).
     </p>
+
     <br />
     <p>
       A <em>creative web developer</em> commited to build experiences that
       <em>delight without distraction</em>.
     </p>
+
     <p>
       Inspired by
       <Link href="https://calmtech.com/"> calm technology principles</Link>, I
       design websites that feature intuitive navigation and are respectful to
       the user, while still leaving room for magic.
     </p>
-    <br />
-    <h1 class="plus-equal">
-      Gorgeous UI&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;
-      <span class="sparkles">
-        <Image loading="eager" src={sparkles} alt="Sparkles" />
-      </span>
-    </h1>
+
+    <PlusEqual />
   </div>
 </Layout>
 
@@ -48,28 +44,6 @@ import sparkles from "../assets/img/sparkles.png";
 
 <style lang="scss">
   @import "../styles/mixins.scss";
-
-  .welcome code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba($accent-light, 12%);
-    color: $accent-light;
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-
-  .plus-equal {
-    margin-top: 5rem;
-    transform: rotateZ(1deg);
-    text-align: center;
-
-    .sparkles img {
-      vertical-align: middle;
-      height: 3rem;
-      width: 3rem;
-      padding-bottom: 8px;
-    }
-  }
 
   em {
     @include accent-gradient(0deg);

@@ -1,0 +1,20 @@
+<code id="visitor-alias"></code>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+  @import "../styles/mixins.scss";
+
+  #visitor-alias {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba($accent-light, 12%);
+    color: $accent-light;
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+
+    @include respond-to(md) {
+      display: block;
+      width: fit-content;
+    }
+  }
+</style>

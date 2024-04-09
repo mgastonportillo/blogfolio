@@ -46,8 +46,10 @@ const desc = "A creative web dev that does a little more than just web dev.";
     <section transition:animate="slide">
       <slot />
     </section>
+
     <style is:global lang="scss">
       @import "../styles/variables.scss";
+      @import "../styles/mixins.scss";
 
       html {
         font-family: "marine", system-ui, sans-serif;
@@ -64,11 +66,20 @@ const desc = "A creative web dev that does a little more than just web dev.";
         width: 960px;
         max-width: 960px;
         display: flex;
+
+        @include respond-to(lg) {
+          padding: 10rem 5vw;
+        }
+
+        @include respond-to(sm) {
+          display: block;
+          padding: 5vw;
+        }
       }
 
       section {
-        min-width: 480px;
-        width: 100%;
+        // min-width: 480px;
+        // width: 100%;
       }
 
       h1 {

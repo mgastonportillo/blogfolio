@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import sparkles from "../assets/img/sparkles.png";
+---
+
+<h1 class="plus-equal">
+  Gorgeous UI&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;
+  <span class="sparkles">
+    <Image loading="eager" src={sparkles} alt="Sparkles" />
+  </span>
+</h1>
+
+<style lang="scss">
+  @import "../styles/mixins.scss";
+
+  .plus-equal {
+    margin: 5rem auto 0 auto;
+    transform: rotateZ(1deg);
+    text-align: center;
+
+    .sparkles img {
+      vertical-align: middle;
+      height: 3rem;
+      width: 3rem;
+      padding-bottom: 8px;
+    }
+
+    @include respond-to(xmd) {
+      max-width: 280px;
+    }
+  }
+</style>
