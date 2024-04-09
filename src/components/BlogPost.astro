@@ -10,11 +10,13 @@ const { href, title, date } = Astro.props;
 
 <style lang="scss">
   @import "../styles/variables.scss";
+  @import "../styles/mixins.scss";
 
   li {
     color: white;
     padding-bottom: 0.5em;
     border-bottom: 1px solid rgba(white, 0.05);
+    list-style-type: none;
 
     &:last-child {
       border-bottom: none;
@@ -28,6 +30,10 @@ const { href, title, date } = Astro.props;
     span {
       color: darkgrey;
       margin-right: 1rem;
+
+      @include respond-to(sm) {
+        display: block;
+      }
     }
   }
 </style>
