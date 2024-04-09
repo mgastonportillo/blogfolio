@@ -11,7 +11,7 @@ import { links } from "../utils/links";
         links.map(({ title, href }) => (
           <li>
             <p>{title}</p>
-            <Link href={href} empty="true" />
+            <Link href={href} icon="true" empty="true" />
           </li>
         ))
       }
@@ -22,54 +22,52 @@ import { links } from "../utils/links";
 <style lang="scss">
   .links-wrapper {
     min-width: 100%;
+
+    ul {
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      li {
+        color: white;
+        padding-bottom: 0.75em;
+        border-bottom: 1px solid rgba(white, 0.05);
+        list-style-type: none;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &::marker {
+          content: "";
+          display: none;
+        }
+
+        p {
+          margin-block: 0;
+          line-height: 1;
+        }
+      }
+    }
   }
 </style>
 
-<style is:inline>
-  .links-wrapper a {
-    text-decoration: none;
+<style is:global>
+  .links-wrapper {
+    a {
+      text-decoration: none;
 
-    .text {
-      font-size: 1.3rem;
-      transition: 0.3s ease;
-      color: $accent-light-alt;
-      text-decoration: underline;
-    }
-
-    &:hover .text {
-      color: $accent-alt;
-    }
-  }
-
-  ul {
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-
-    li {
-      color: white;
-      padding-bottom: 0.75em;
-      border-bottom: 1px solid rgba(white, 0.05);
-      list-style-type: none;
-
-      p {
-        margin-block: 0;
-        line-height: 1;
+      .text {
+        font-size: 1.3rem;
+        transition: 0.3s ease;
+        color: $accent-light-alt;
+        text-decoration: underline;
       }
 
-      &:last-child {
-        border-bottom: none;
-      }
-
-      &::marker {
-        content: "";
-        display: none;
+      &:hover .text {
+        color: $accent-alt;
       }
     }
-  }
-
-  [data-empty-link-text="true"]::before {
-    content: attr(href);
   }
 </style>

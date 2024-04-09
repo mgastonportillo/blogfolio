@@ -1,23 +1,35 @@
 ---
 interface Props {
   href: string;
-  empty?: string;
+  icon?: "true";
+  empty?: "true";
 }
 
-let { href, empty } = Astro.props;
+let { href, icon, empty } = Astro.props;
 import linkIcon from "../assets/img/link.svg?raw";
 ---
 
 <a href={href} data-empty-link-text={empty}>
   <span class="text"><slot /></span>
-  <span class="icon" aria-hidden="true"><Fragment set:html={linkIcon} /></span>
+  {
+    icon && (
+      <span class="icon" aria-hidden="true">
+        <Fragment set:html={linkIcon} />
+      </span>
+    )
+  }
 </a>
 
 <style lang="scss">
   @import "../styles/variables.scss";
+  @import "../styles/mixins.scss";
 
   a {
     text-decoration: none;
+
+    &[data-empty-link-text="true"]::before {
+      content: attr(href);
+    }
 
     &::before {
       font-size: 1.3rem;
@@ -43,7 +55,7 @@ import linkIcon from "../assets/img/link.svg?raw";
 
     .icon {
       width: 10px;
-      margin: 0 2px 0 2px;
+      margin-left: 2px;
       display: inline-block;
     }
   }
