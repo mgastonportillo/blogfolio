@@ -6,10 +6,12 @@ interface Props {
 
 let { href, icon } = Astro.props;
 import linkIcon from "../assets/img/link.svg?raw";
+
+const hasChildren = Astro.slots.has("default");
 ---
 
 <a href={href}>
-  <span class="text">{Astro.slots.has("default") ? <slot /> : href}</span>
+  <span class="text">{hasChildren ? <slot /> : href}</span>
   {
     icon && (
       <span class="icon" aria-hidden="true">
