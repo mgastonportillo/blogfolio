@@ -1,0 +1,29 @@
+---
+import Layout from "../layout/Layout.astro";
+import Highlight from "../components/Highlight.astro";
+---
+
+<Layout title="Page not found">
+  <a class="back-home" href="/">&#60; go back home</a>
+  <div class="error-404-wrapper">
+    <Highlight type="warn" pre="Error 404: ">Page not found</Highlight>
+  </div>
+</Layout>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .back-home {
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  .error-404-wrapper {
+    padding-top: 2rem;
+  }
+</style>
