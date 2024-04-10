@@ -10,8 +10,8 @@ import { links } from "../utils/links";
       {
         links.map(({ title, href }) => (
           <li>
-            <p>{title}</p>
-            <Link href={href} icon="true" empty="true" />
+            <p id="link-title">{title}</p>
+            <Link href={href} icon="true" />
           </li>
         ))
       }

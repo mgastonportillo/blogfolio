@@ -2,15 +2,14 @@
 interface Props {
   href: string;
   icon?: "true";
-  empty?: "true";
 }
 
-let { href, icon, empty } = Astro.props;
+let { href, icon } = Astro.props;
 import linkIcon from "../assets/img/link.svg?raw";
 ---
 
-<a href={href} data-empty-link-text={empty}>
-  <span class="text"><slot /></span>
+<a href={href}>
+  <span class="text">{Astro.slots.has("default") ? <slot /> : href}</span>
   {
     icon && (
       <span class="icon" aria-hidden="true">
@@ -26,10 +25,6 @@ import linkIcon from "../assets/img/link.svg?raw";
 
   a {
     text-decoration: none;
-
-    &[data-empty-link-text="true"]::before {
-      content: attr(href);
-    }
 
     &::before {
       font-size: 1.3rem;
