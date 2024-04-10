@@ -1,0 +1,67 @@
+---
+import GithubLogo from "../assets/img/gh-logo.svg?raw";
+---
+
+<div class="wrapper-socials">
+  <a href="mailto: mgastonportillo@gmail.com" class="mail"><span>@</span></a>
+  <a href="https://github.com/mgastonportillo" class="github"
+    ><Fragment set:html={GithubLogo} /></a
+  >
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+  @import "../styles/mixins.scss";
+
+  .wrapper-socials {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    @include respond-to(sm) {
+      position: absolute;
+      top: 9rem;
+      right: 7vw;
+    }
+
+    a {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 50%;
+      text-align: center;
+
+      &.mail span {
+        margin-top: -10px;
+        transition: 0.3s ease;
+        line-height: 0.8;
+        font-size: 2rem;
+        color: darkgrey;
+      }
+
+      &:hover.mail span {
+        color: $white;
+      }
+    }
+  }
+</style>
+
+<style lang="scss" is:global>
+  @import "../styles/variables.scss";
+
+  a.github svg {
+    width: 1.6rem;
+    height: auto;
+
+    path {
+      transition: 0.3s ease;
+      fill: darkgrey;
+    }
+
+    &:hover path {
+      fill: $white;
+    }
+  }
+</style>
