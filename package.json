@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-astro",
+  "name": "blogfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,12 +11,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^2.2.4",
-    "@astrojs/react": "^3.1.1",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
     "astro": "^4.5.12",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "sharp": "^0.33.3"
   },
   "devDependencies": {
