@@ -1,15 +1,20 @@
+interface Title {
+  en: string,
+  es: string,
+}
+
 interface Link {
-  title: string,
+  title: Title,
   href: string,
 }
 
 export const links: Link[] = [
   {
-    title: "The best approach to Vim",
+    title: { en: "The best approach to Vim", es: "La mejor manera de utilizar Vim" },
     href: "https://neovim.io",
   },
   {
-    title: "Polish your JavaScript toolbelt",
+    title: { en: "Polish your JavaScript toolbelt", es: "Sacale punta a tu lapiz de JavaScript" },
     href: "https://justjavascript.com",
   },
 ];

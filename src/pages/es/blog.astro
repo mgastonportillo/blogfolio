@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Layout from "../../layout/Layout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+
+const posts = await getCollection("blog_es");
+const locale = Astro.currentLocale.toString()!;
+---
+
+<Layout title="Blog">
+  <div aria-labelledby="blog">
+    <ul>
+      {
+        posts.map((post) => {
+          const formatter = new Intl.DateTimeFormat("es-AR", {
+            dateStyle: "full",
+            timeStyle: "short",
+          });
+
+          const esDate = formatter.format(post.data.pubDate);
+          const date = esDate.slice(8, 27);
+
+          return (
+            <BlogPost
+              href={getRelativeLocaleUrl(locale, `/blog/${post.slug}`)}
+              title={post.data.title}
+              date={date}
+            />
+          );
+        })
+      }
+    </ul>
+  </div>
+</Layout>
+
+<style lang="scss">
+  ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+</style>

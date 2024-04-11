@@ -1,13 +1,40 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "../layout/Layout.astro";
 import Highlight from "../components/Highlight.astro";
+
+const locale = Astro.currentLocale?.toString()!;
 ---
 
 <Layout title="Page not found">
-  <a class="back-home" href="/">&#60; go back home</a>
-  <div class="error-404-wrapper">
-    <Highlight type="warn" pre="Error 404: ">Page not found</Highlight>
-  </div>
+  {
+    locale === "en" && (
+      <>
+        <a class="back-home" href="/">
+          &#60; go back home
+        </a>
+        <div class="error-404-wrapper">
+          <Highlight type="warn" pre="Error 404: ">
+            Page not found
+          </Highlight>
+        </div>
+      </>
+    )
+  }
+  {
+    locale === "es" && (
+      <>
+        <a class="back-home" href={getRelativeLocaleUrl("es", "/")}>
+          &#60; ir a inicio
+        </a>
+        <div class="error-404-wrapper">
+          <Highlight type="warn" pre="Error 404: ">
+            Página no encontrada
+          </Highlight>
+        </div>
+      </>
+    )
+  }
 </Layout>
 
 <style lang="scss">

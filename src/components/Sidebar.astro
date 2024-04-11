@@ -1,4 +1,5 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { Image } from "astro:assets";
 import GaleLogo from "../assets/img/gale-logo.svg";
 
@@ -13,22 +14,23 @@ const links: Link[] = [
   { href: "/blog/", text: "blog" },
   { href: "/links/", text: "links" },
 ];
+
+const locale = Astro.currentLocale?.toString()!;
 ---
 
 <aside>
   <div class="nav-wrapper">
-    <Image
-      class="gale-logo"
-      loading="eager"
-      src={GaleLogo}
-      alt="Logo of a letter g with a rectangular shape on top that resembles a crown"
-    />
+    <Image class="gale-logo" loading="eager" src={GaleLogo} alt="Gale logo" />
     <nav class="menu-list">
       {
         links.map(({ href, text }) => (
           <a
-            href={href}
-            class={href === Astro.url.pathname ? "active" : ""}
+            href={getRelativeLocaleUrl(locale, href)}
+            class={
+              href === Astro.url.pathname || `/es${href}` === Astro.url.pathname
+                ? "active"
+                : ""
+            }
             id={text}
             data-astro-history="replace"
           >
