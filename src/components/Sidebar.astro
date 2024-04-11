@@ -91,7 +91,7 @@ const locale = Astro.currentLocale?.toString()!;
     flex-direction: column;
     padding-right: 70px;
 
-    @include respond-to(sm) {
+    @include respond-to(md) {
       padding: 0;
       min-height: auto;
       min-width: auto;
@@ -105,7 +105,7 @@ const locale = Astro.currentLocale?.toString()!;
       top: 12rem;
       position: sticky;
 
-      @include respond-to(sm) {
+      @include respond-to(md) {
         top: 0;
         position: relative;
         display: flex;
@@ -131,7 +131,7 @@ const locale = Astro.currentLocale?.toString()!;
           }
         }
 
-        @include respond-to(sm) {
+        @include respond-to(md) {
           width: 80px;
           margin-left: -1rem;
         }
@@ -144,7 +144,7 @@ const locale = Astro.currentLocale?.toString()!;
         padding-top: 3rem;
         gap: 1rem;
 
-        @include respond-to(sm) {
+        @include respond-to(md) {
           flex-direction: row;
           align-items: flex-end;
           justify-content: space-between;
@@ -171,7 +171,7 @@ const locale = Astro.currentLocale?.toString()!;
           &.active:before {
             content: $navbar-prefix;
 
-            @include respond-to(sm) {
+            @include respond-to(md) {
               content: none;
             }
           }
@@ -185,7 +185,7 @@ const locale = Astro.currentLocale?.toString()!;
               outline-color: transparent;
               content: $navbar-prefix;
 
-              @include respond-to(sm) {
+              @include respond-to(md) {
                 content: none;
               }
             }

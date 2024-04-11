@@ -1,0 +1,62 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<div class="locale-changer-wrapper">
+  <div class="locale-changer">
+    <a class={`en ${currentPath === "/" ? "active" : ""}`} href="/">en</a>
+    <span></span>
+    <a class={`es ${currentPath === "/es/" ? "active" : ""}`} href="/es/">es</a>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+  @import "../styles/mixins.scss";
+
+  .locale-changer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid rgba($accent-light, 0.1);
+    border-radius: 6px;
+    margin-bottom: -4px;
+    padding-bottom: 2px;
+    background: rgba($accent-light, 10%);
+
+    a {
+      color: lightgrey;
+      transition: 0.3s ease;
+      text-decoration: none;
+
+      @include respond-to(sm) {
+      }
+
+      &.en {
+        padding-left: 0.5rem;
+      }
+
+      &.es {
+        padding-right: 0.5rem;
+      }
+
+      &.active {
+        color: $accent-light;
+
+        &:hover {
+          color: $accent-lighter;
+        }
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    span {
+      border-left: 1px solid rgba($accent-light, 0.1);
+      transform: rotateZ(10deg);
+    }
+  }
+</style>

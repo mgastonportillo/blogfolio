@@ -1,0 +1,31 @@
+---
+import LocaleChanger from "../components/LocaleChanger.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+---
+
+<div class="top-toolbar">
+  <SocialLinks />
+  <span class="separator">&nbsp;</span>
+  <LocaleChanger />
+</div>
+
+<style lang="scss">
+  @import "../styles/mixins.scss";
+
+  .top-toolbar {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.8rem;
+
+    .separator {
+      border-right: 1px solid rgba($white, 0.1);
+      margin-right: 3px;
+    }
+
+    @include respond-to(md) {
+      position: absolute;
+      top: 9rem;
+      right: 7vw;
+    }
+  }
+</style>
