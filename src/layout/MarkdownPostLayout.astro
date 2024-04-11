@@ -1,18 +1,16 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "./Layout.astro";
+import { formatDate } from "../utils/utils.ts";
+import type { UILocale } from "../utils/utils.ts";
+
 const { frontmatter } = Astro.props;
-
-const dayMonth = frontmatter.pubDate.toDateString().slice(4, 10);
-const year = frontmatter.pubDate.toDateString().slice(11, 15);
-const date = `${dayMonth}ᵗʰ, ${year}`;
-
 const locale = Astro.currentLocale?.toString()!;
 ---
 
 <Layout title={frontmatter.title}>
   <a href={getRelativeLocaleUrl(locale, "/blog/")}>&#60; posts</a>
-  <p>{date}</p>
+  <p>{formatDate(locale as UILocale, frontmatter.pubDate)}</p>
   <div class="md-wrapper">
     <slot />
   </div>

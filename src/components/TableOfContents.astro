@@ -1,5 +1,13 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title = "Table of contents" } = Astro.props;
+---
+
 <details class="md-toc" transition:persist>
-  <summary>Table of contents</summary>
+  <summary>{title}</summary>
   <div class="toc-wrapper">
     <slot />
   </div>

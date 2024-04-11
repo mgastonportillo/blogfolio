@@ -3,7 +3,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "../layout/Layout.astro";
 import Highlight from "../components/Highlight.astro";
 
-const locale = Astro.currentLocale?.toString()!;
+const locale = Astro.currentLocale;
 ---
 
 <Layout title="Page not found">

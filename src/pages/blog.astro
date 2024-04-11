@@ -1,9 +1,12 @@
 ---
 import { getCollection } from "astro:content";
+import { formatDate } from "../utils/utils";
+import type { UILocale } from "../utils/utils";
 import Layout from "../layout/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
 const posts = await getCollection("blog");
+const locale = Astro.currentLocale;
 ---
 
 <Layout title="Blog">
@@ -11,14 +14,11 @@ const posts = await getCollection("blog");
     <ul>
       {
         posts.map((post) => {
-          const dayMonth = post.data.pubDate.toDateString().slice(4, 10);
-          const year = post.data.pubDate.toDateString().slice(11, 15);
-          const date = `${dayMonth}ᵗʰ, ${year}`;
           return (
             <BlogPost
               href={`/blog/${post.slug}`}
               title={post.data.title}
-              date={date}
+              date={formatDate(locale as UILocale, post.data.pubDate)}
             />
           );
         })

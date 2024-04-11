@@ -1,10 +1,25 @@
 ---
+interface Props {
+  locale?: "en" | "es";
+}
+
 import { Image } from "astro:assets";
 import sparkles from "../assets/img/sparkles.png";
+
+const { locale = "en" } = Astro.props;
 ---
 
 <h1 class="plus-equal">
-  Smooth UI&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;
+  {
+    locale === "en" && (
+      <span>Smooth UI&nbsp; + &nbsp;Mindful UX&nbsp; =&nbsp;</span>
+    )
+  }
+  {
+    locale === "es" && (
+      <span>UI concisa&nbsp; + &nbsp;UX con consciencia&nbsp; =&nbsp;</span>
+    )
+  }
   <span class="sparkles">
     <Image loading="eager" src={sparkles} alt="Sparkles" />
   </span>
