@@ -1,10 +1,8 @@
-# build output
+node_modules/
 dist/
+
 # generated types
 .astro/
-
-# dependencies
-node_modules/
 
 # logs
 npm-debug.log*
@@ -12,13 +10,12 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
-.env
-.env.production
+*.env
+*.env.production
 
-# macOS-specific files
-.DS_Store
-
-## WSL exclusive
+## wsl exclusive
 **/*Zone.Identifier
+
+# ignore top-level vscode settings
+/.vscode/settings.json
