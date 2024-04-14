@@ -1,9 +1,10 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
+import type { SupportedLocale } from "../types/types";
 import Layout from "../layout/Layout.astro";
 import Highlight from "../components/Highlight.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const locale = Astro.currentLocale;
+const locale = Astro.currentLocale as SupportedLocale;
 ---
 
 <Layout title="Page not found">

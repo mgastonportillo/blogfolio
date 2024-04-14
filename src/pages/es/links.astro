@@ -10,9 +10,9 @@ const locale = Astro.currentLocale?.toString()!;
   <div class="links-wrapper" aria-labelledby="links">
     <ul>
       {
-        links.map(({ title, href }) => (
+        links.map(({ text, href }) => (
           <li>
-            <p>{title[locale]}</p>
+            <p>{text[locale]}</p>
             <Link href={href} icon="true" />
           </li>
         ))

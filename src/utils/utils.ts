@@ -1,6 +1,6 @@
-export type UILocale = "en" | "es";
+import type { SupportedLocale } from "../types/types";
 
-export const formatDate = (locale: UILocale, date: Date) => {
+export const formatDate = (locale: SupportedLocale, date: Date) => {
   if (locale === "en") {
     const dayMonth = date.toDateString().slice(4, 10);
     const year = date.toDateString().slice(11, 15);

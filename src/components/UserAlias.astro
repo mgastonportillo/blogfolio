@@ -1,6 +1,8 @@
 ---
+import type { SupportedLocale } from "../types/types";
+
 interface Props {
-  locale?: "en" | "es";
+  locale?: SupportedLocale;
 }
 
 const { locale = "en" } = Astro.props;

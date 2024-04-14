@@ -1,11 +1,11 @@
 ---
 import Link from "../components/Link.astro";
 
-const { href, title, date } = Astro.props;
+const { href, text, date } = Astro.props;
 ---
 
 <li>
-  <span>{date}</span><Link href={href} icon="true">{title}</Link>
+  <span>{date}</span><Link href={href} icon="true">{text}</Link>
 </li>
 
 <style lang="scss">

@@ -1,13 +1,13 @@
 ---
-import { getCollection } from "astro:content";
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { formatDate } from "../../utils/utils";
-import type { UILocale } from "../../utils/utils";
+import type { SupportedLocale } from "../../types/types";
 import Layout from "../../layout/Layout.astro";
 import BlogPost from "../../components/BlogPost.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../utils/utils";
 
 const entries = await getCollection("blog_es");
-const locale = Astro.currentLocale;
+const locale = Astro.currentLocale as SupportedLocale;
 ---
 
 <Layout title="Blog">
@@ -18,8 +18,8 @@ const locale = Astro.currentLocale;
           return (
             <BlogPost
               href={getRelativeLocaleUrl("es", `/blog/${entry.slug}`)}
-              title={entry.data.title}
-              date={formatDate(locale as UILocale, entry.data.pubDate)}
+              text={entry.data.title}
+              date={formatDate(locale, entry.data.pubDate)}
             />
           );
         })

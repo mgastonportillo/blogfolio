@@ -1,10 +1,12 @@
 ---
+import type { SupportedLocale } from "../types/types";
+
 interface Props {
-  locale?: "en" | "es";
+  locale?: SupportedLocale;
 }
 
-import { Image } from "astro:assets";
 import sparkles from "../assets/img/sparkles.png";
+import { Image } from "astro:assets";
 
 const { locale = "en" } = Astro.props;
 ---

@@ -1,12 +1,8 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { Image } from "astro:assets";
+import type { Link } from "../types/types";
 import GaleLogo from "../assets/img/gale-logo.svg";
-
-interface Link {
-  href: string;
-  text: string;
-}
+import { Image } from "astro:assets";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const links: Link[] = [
   { href: "/", text: "home" },

@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content";
-import { formatDate } from "../utils/utils";
-import type { UILocale } from "../utils/utils";
+import type { SupportedLocale } from "../types/types";
 import Layout from "../layout/Layout.astro";
 import BlogPost from "../components/BlogPost.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../utils/utils";
 
 const posts = await getCollection("blog");
-const locale = Astro.currentLocale;
+const locale = Astro.currentLocale as SupportedLocale;
 ---
 
 <Layout title="Blog">
@@ -17,8 +17,8 @@ const locale = Astro.currentLocale;
           return (
             <BlogPost
               href={`/blog/${post.slug}`}
-              title={post.data.title}
-              date={formatDate(locale as UILocale, post.data.pubDate)}
+              text={post.data.title}
+              date={formatDate(locale, post.data.pubDate)}
             />
           );
         })

@@ -4,9 +4,9 @@ interface Props {
   icon?: "true";
 }
 
-let { href, icon } = Astro.props;
 import linkIcon from "../assets/img/link.svg?raw";
 
+let { href, icon } = Astro.props;
 const hasChildren = Astro.slots.has("default");
 ---
 
