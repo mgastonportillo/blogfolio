@@ -9,16 +9,21 @@ const { locale = "en" } = Astro.props;
 <code id="user-alias" data-locale={locale}></code>
 
 <script>
-  import { userAliasesByLocale } from "../utils/userAliasesByLocale.ts";
+  import type { SupportedLocale } from "../types/types";
+  import { getRandomUserAliasByLocale } from "../utils/userAlias.ts";
+
+  const updateAlias = () => {
+    const userAlias: HTMLElement = document.querySelector("#user-alias")!;
+    userAlias.innerHTML = "";
+    const locale = userAlias.dataset?.locale;
+    let randomAlias = getRandomUserAliasByLocale(locale as SupportedLocale);
+    userAlias.innerHTML = randomAlias;
+  };
+
+  updateAlias();
 
   document.addEventListener("astro:page-load", () => {
-    const userAlias: HTMLElement = document.querySelector("#user-alias")!;
-    if (userAlias instanceof HTMLElement) {
-      const locale = userAlias.dataset?.locale!;
-      let aliases = userAliasesByLocale[locale];
-      let randomAlias = aliases[Math.floor(Math.random() * aliases.length)];
-      userAlias.innerHTML = randomAlias;
-    }
+    updateAlias();
   });
 </script>
 
