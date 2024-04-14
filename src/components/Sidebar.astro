@@ -170,6 +170,16 @@ const locale = Astro.currentLocale?.toString()!;
 
           &.active:before {
             content: $navbar-prefix;
+          }
+
+          &.active:after {
+            content: $navbar-suffix;
+            color: $bg;
+          }
+
+          &.active:before,
+          &.active:after {
+            font-weight: 500;
 
             @include respond-to(md) {
               content: none;
@@ -180,14 +190,25 @@ const locale = Astro.currentLocale?.toString()!;
           &:focus-visible {
             outline: none;
 
-            &:before {
+            &:before,
+            &:after {
               outline-offset: 0px;
               outline-color: transparent;
-              content: $navbar-prefix;
 
               @include respond-to(md) {
                 content: none;
               }
+            }
+
+            &:before {
+              content: $navbar-prefix;
+              font-weight: 500;
+            }
+
+            &:after {
+              content: $navbar-suffix;
+              font-weight: 500;
+              color: $white;
             }
           }
         }
