@@ -32,9 +32,6 @@ const currentPath = Astro.url.pathname;
       margin-bottom: -2px;
       padding-bottom: 1px;
 
-      @include respond-to(sm) {
-      }
-
       &.en {
         padding-left: 0.5rem;
         border-top-left-radius: 5px;
@@ -42,11 +39,11 @@ const currentPath = Astro.url.pathname;
 
         &:after {
           position: absolute;
-          right: -0.495em;
+          right: -0.5em;
           content: "";
           background: inherit;
           width: 0.5em;
-          height: 1.35em;
+          height: 100%;
           clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 100%);
         }
       }
@@ -62,7 +59,7 @@ const currentPath = Astro.url.pathname;
           content: "";
           background: inherit;
           width: 0.5em;
-          height: 1.35em;
+          height: 100%;
 
           clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
@@ -80,11 +77,6 @@ const currentPath = Astro.url.pathname;
       &:hover {
         color: $white;
       }
-    }
-
-    span {
-      border-left: 1px solid rgba($accent-light, 0.1);
-      transform: rotateZ(10deg);
     }
   }
 </style>
