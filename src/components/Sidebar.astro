@@ -190,16 +190,6 @@ const locale = Astro.currentLocale?.toString()!;
           &:focus-visible {
             outline: none;
 
-            &:before,
-            &:after {
-              outline-offset: 0px;
-              outline-color: transparent;
-
-              @include respond-to(md) {
-                content: none;
-              }
-            }
-
             &:before {
               content: $navbar-prefix;
               font-weight: 500;
@@ -209,6 +199,16 @@ const locale = Astro.currentLocale?.toString()!;
               content: $navbar-suffix;
               font-weight: 500;
               color: $white;
+            }
+
+            &:before,
+            &:after {
+              outline-offset: 0px;
+              outline-color: transparent;
+
+              @include respond-to(md) {
+                content: none;
+              }
             }
           }
         }
