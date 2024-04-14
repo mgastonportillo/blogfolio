@@ -1,6 +1,6 @@
-import type { Link } from "../types/types";
+import type { UsefulLink } from "../types/types";
 
-export const links: Link[] = [
+export const links: UsefulLink[] = [
   {
     text: {
       en: "The best approach to Vim",

@@ -1,9 +1,10 @@
+// exclusive for links.ts
 interface LinkText {
   en: string;
   es: string;
 }
 
-export type Link = {
+export type UsefulLink = {
   text: LinkText;
   href: string;
 };

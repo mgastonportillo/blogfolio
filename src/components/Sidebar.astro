@@ -1,14 +1,18 @@
 ---
-import type { Link } from "../types/types";
+interface Link {
+  href: string;
+  title: string;
+}
+
 import GaleLogo from "../assets/img/gale-logo.svg";
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const links: Link[] = [
-  { href: "/", text: "home" },
-  { href: "/about/", text: "about" },
-  { href: "/blog/", text: "blog" },
-  { href: "/links/", text: "links" },
+  { href: "/", title: "home" },
+  { href: "/about/", title: "about" },
+  { href: "/blog/", title: "blog" },
+  { href: "/links/", title: "links" },
 ];
 
 const locale = Astro.currentLocale?.toString()!;
@@ -19,7 +23,7 @@ const locale = Astro.currentLocale?.toString()!;
     <Image class="gale-logo" loading="eager" src={GaleLogo} alt="Gale logo" />
     <nav class="menu-list">
       {
-        links.map(({ href, text }) => (
+        links.map(({ href, title }) => (
           <a
             href={getRelativeLocaleUrl(locale, href)}
             class={
@@ -27,10 +31,10 @@ const locale = Astro.currentLocale?.toString()!;
                 ? "active"
                 : ""
             }
-            id={text}
+            id={title}
             data-astro-history="replace"
           >
-            {text}
+            {title}
           </a>
         ))
       }
@@ -40,7 +44,7 @@ const locale = Astro.currentLocale?.toString()!;
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const nav = document.querySelector(".menu-list");
+    const nav = document.querySelector(".menu-list")!;
     const items = nav.querySelectorAll("a");
     const currentPathname = window.location.pathname;
     let currentIndex = 0;
