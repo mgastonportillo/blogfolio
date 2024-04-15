@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.logo-wrapper {
+  display: flex;
+  padding: 5rem 0;
+  height: 75%;
+  width: auto;
+
+  &:hover > svg {
+    stroke-width: 2em;
+  }
+
+  @include respond-to(sm) {
+    padding: 5vh 0;
+  }
+}

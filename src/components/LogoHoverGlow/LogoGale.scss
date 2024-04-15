@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.logo-svg {
+  transition: 0.3s ease-out;
+  width: auto;
+  margin: 0 auto;
+  fill: rgba($accent-light, 0.01);
+  stroke-width: 1em;
+}

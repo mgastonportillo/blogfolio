@@ -4,11 +4,11 @@ import Link from "../components/Link.astro";
 import Toolbar from "../components/Toolbar.astro";
 import UserAlias from "../components/UserAlias.astro";
 import GluedComma from "../components/GluedComma.astro";
-import PlusEqual from "../components/PlusEqual.astro";
+import LogoHoverGlow from "../components/LogoHoverGlow/LogoHoverGlow";
 ---
 
 <Layout title="mgastonportillo">
-  <div aria-labelledby="home">
+  <div class="home-wrapper" aria-labelledby="home">
     <div class="wrapper-header">
       <h1 class="welcome">welcome, <UserAlias /></h1>
       <Toolbar />
@@ -31,12 +31,16 @@ import PlusEqual from "../components/PlusEqual.astro";
       respectful to the user, while still leaving room for magic.
     </p>
 
-    <PlusEqual />
+    <LogoHoverGlow client:only="react" />
   </div>
 </Layout>
 
 <style lang="scss">
   @import "../styles/mixins.scss";
+
+  body {
+    overflow: hidden;
+  }
 
   .wrapper-header {
     display: flex;
