@@ -168,43 +168,15 @@ const locale = Astro.currentLocale?.toString()!;
             font-weight: 700;
           }
 
-          &.active:before {
-            content: $navbar-prefix;
-          }
-
-          &.active:after {
-            content: $navbar-suffix;
-            color: $bg;
-          }
-
-          &.active:before,
-          &.active:after {
-            font-weight: 500;
-
-            @include respond-to(md) {
-              content: none;
-            }
-          }
-
           &:focus,
           &:focus-visible {
             outline: none;
+            outline-offset: 0px;
+            outline-color: transparent;
 
             &:before {
               content: $navbar-prefix;
               font-weight: 500;
-            }
-
-            &:after {
-              content: $navbar-suffix;
-              font-weight: 500;
-              color: $white;
-            }
-
-            &:before,
-            &:after {
-              outline-offset: 0px;
-              outline-color: transparent;
 
               @include respond-to(md) {
                 content: none;
