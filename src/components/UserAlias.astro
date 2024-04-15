@@ -16,10 +16,13 @@ const { locale = "en" } = Astro.props;
 
   const updateAlias = () => {
     const userAlias: HTMLElement = document.querySelector("#user-alias")!;
-    userAlias.innerHTML = "";
-    const locale = userAlias.dataset?.locale;
-    let randomAlias = getRandomUserAliasByLocale(locale as SupportedLocale);
-    userAlias.innerHTML = randomAlias;
+
+    if (userAlias !== null) {
+      userAlias.innerHTML = "";
+      const locale = userAlias.dataset.locale as SupportedLocale;
+      let randomAlias = getRandomUserAliasByLocale(locale);
+      userAlias.innerHTML = randomAlias;
+    }
   };
 
   updateAlias();

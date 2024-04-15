@@ -23,14 +23,8 @@ const LogoGale = ({ cursor, wrapperRef }: Props) => {
 
     if (wrapperRef.current) {
       const wrapper = wrapperRef.current!;
-      const handleMouseEnter = () => {
-        setStopColor("#e0ccfa");
-        console.log(stopColor);
-      };
-      const handleMouseLeave = () => {
-        setStopColor("#202020");
-        console.log(stopColor);
-      };
+      const handleMouseEnter = () => setStopColor("#e0ccfa");
+      const handleMouseLeave = () => setStopColor("#202020");
       wrapper.addEventListener("mouseenter", handleMouseEnter);
       wrapper.addEventListener("mouseleave", handleMouseLeave);
 
